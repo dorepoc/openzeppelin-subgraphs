@@ -1,0 +1,10 @@
+{
+  "output": "generated/krc20.",
+  "datasources": [
+    {
+      "module": [
+        "krc20"
+      ]
+    }
+  ]
+}

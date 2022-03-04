@@ -9,6 +9,7 @@
         "erc20",
         "erc721",
         "governor",
+        "krc20",
         "ownable",
         "pausable",
         "timelock",

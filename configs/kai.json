@@ -1,0 +1,8 @@
+{
+  "output": "generated/kai.",
+  "chain": "kaitestnet",
+  "datasources": [
+    { "address": "0x5ED74c6D9627f341fb48b38E8148e24Bb1db0d69", "startBlock": 5215285, "module": "erc721" },
+    { "address": "0xF137CC1F53437361Af6C2332CC68706576EAF165", "startBlock":  5215317, "module": "erc721" }
+  ]
+}

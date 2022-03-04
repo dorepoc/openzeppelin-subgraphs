@@ -1,0 +1,57 @@
+[{
+  "name": "Account",
+  "fields": [
+    { "name": "asKRC20",                "type": "KRC20Contract"                        },
+    { "name": "KRC20balances",          "type": "KRC20Balance!",  "derived": "account" },
+    { "name": "KRC20approvalsOwner",    "type": "KRC20Approval!", "derived": "owner"   },
+    { "name": "KRC20approvalsSpender",  "type": "KRC20Approval!", "derived": "spender" },
+    { "name": "KRC20transferFromEvent", "type": "KRC20Transfer!", "derived": "from"    },
+    { "name": "KRC20transferToEvent",   "type": "KRC20Transfer!", "derived": "to"      }
+  ]
+},{
+  "name": "KRC20Contract",
+  "fields": [
+    { "name": "asAccount",              "type": "Account!"                              },
+    { "name": "name",                   "type": "String"                                },
+    { "name": "symbol",                 "type": "String"                                },
+    { "name": "decimals",               "type": "Int!"                                  },
+    { "name": "totalSupply",            "type": "KRC20Balance!"                         },
+    { "name": "balances",               "type": "KRC20Balance!",  "derived": "contract" },
+    { "name": "approvals",              "type": "KRC20Approval!", "derived": "contract" },
+    { "name": "transfers",              "type": "KRC20Transfer!", "derived": "contract" }
+  ]
+},{
+  "name": "KRC20Balance",
+  "fields": [
+    { "name": "contract",               "type": "KRC20Contract!"                           },
+    { "name": "account",                "type": "Account"                                  },
+    { "name": "value",                  "type": "BigDecimal!"                              },
+    { "name": "valueExact",             "type": "BigInt!"                                  },
+    { "name": "transferFromEvent",      "type": "KRC20Transfer!", "derived": "fromBalance" },
+    { "name": "transferToEvent",        "type": "KRC20Transfer!", "derived": "toBalance"   }
+  ]
+},{
+  "name": "KRC20Approval",
+  "fields": [
+    { "name": "contract",               "type": "KRC20Contract!" },
+    { "name": "owner",                  "type": "Account!"       },
+    { "name": "spender",                "type": "Account!"       },
+    { "name": "value",                  "type": "BigDecimal!"    },
+    { "name": "valueExact",             "type": "BigInt!"        }
+  ]
+},{
+  "name": "KRC20Transfer",
+  "parent": "Event",
+  "fields": [
+    { "name": "emitter",                "type": "Account!"       },
+    { "name": "transaction",            "type": "Transaction!"   },
+    { "name": "timestamp",              "type": "BigInt!"        },
+    { "name": "contract",               "type": "KRC20Contract!" },
+    { "name": "from",                   "type": "Account"        },
+    { "name": "fromBalance",            "type": "KRC20Balance"   },
+    { "name": "to",                     "type": "Account"        },
+    { "name": "toBalance",              "type": "KRC20Balance"   },
+    { "name": "value",                  "type": "BigDecimal!"    },
+    { "name": "valueExact",             "type": "BigInt!"        }
+  ]
+}]
