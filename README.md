@@ -75,9 +75,11 @@ npx graph-compiler \
 ```
 
 Deploy on graphnode:
+
 ```npx graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 project/name generated/<subgraph_project>.subgraph.yaml```
 
 This will create two files, `generated/sample.schema.graphql` and `generated/sample.subgraph.yaml` that can be used to build and deploy the corresponding subgraph.
 
 Note: `startBlock` is optional but will improve your subgraph initial indexing speed.
+
 For custom code, need to replace ```include src/datasources``` from local instead of openzeppelin
